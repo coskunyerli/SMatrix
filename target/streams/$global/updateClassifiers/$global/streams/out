@@ -297,3 +297,35 @@
 [debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.4/scala-reflect-2.12.4-sources.jar
 [info] downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar ...
 [debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4-sources.jar.sha1
+[debug] 	public: downloading https://repo1.maven.org/maven2/jline/jline/2.14.5/jline-2.14.5-sources.jar.sha1
+[debug] sha1 OK for https://repo1.maven.org/maven2/jline/jline/2.14.5/jline-2.14.5-sources.jar
+[info] 	[SUCCESSFUL ] jline#jline;2.14.5!jline.jar(src) (2491ms)
+[debug] 		tried /Users/coskunyerli/.ivy2/local/org.scala-lang/scala-compiler/2.12.4/srcs/scala-compiler-sources.jar
+[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4-sources.jar
+[debug] sha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4-sources.jar
+[info] 	[SUCCESSFUL ] org.scala-lang#scala-library;2.12.4!scala-library.jar(src) (2497ms)
+[info] downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4-sources.jar ...
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4-sources.jar
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.4/scala-reflect-2.12.4-sources.jar.sha1
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar.sha1
+[debug] sha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.4/scala-reflect-2.12.4-sources.jar
+[info] 	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar(src) (3688ms)
+[debug] sha1 OK for https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar
+[info] 	[SUCCESSFUL ] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src) (3740ms)
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4-sources.jar.sha1
+[debug] sha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4-sources.jar
+[info] 	[SUCCESSFUL ] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(src) (3463ms)
+[debug] :: resolution report :: resolve 35ms :: artifacts dl 5959ms
+[debug] 	report for default#smatrix$sources;0.1 compile produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-compile.xml
+[debug] 	report for default#smatrix$sources;0.1 runtime produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-runtime.xml
+[debug] 	report for default#smatrix$sources;0.1 test produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-test.xml
+[debug] 	report for default#smatrix$sources;0.1 provided produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-provided.xml
+[debug] 	report for default#smatrix$sources;0.1 optional produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-optional.xml
+[debug] 	report for default#smatrix$sources;0.1 compile-internal produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-compile-internal.xml
+[debug] 	report for default#smatrix$sources;0.1 runtime-internal produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-runtime-internal.xml
+[debug] 	report for default#smatrix$sources;0.1 test-internal produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-test-internal.xml
+[debug] 	report for default#smatrix$sources;0.1 plugin produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-plugin.xml
+[debug] 	report for default#smatrix$sources;0.1 pom produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-pom.xml
+[debug] 	report for default#smatrix$sources;0.1 scala-tool produced in /Users/coskunyerli/Desktop/yuksek_lisans/Scala/SMatrix/target/scala-2.12/resolution-cache/reports/default-smatrix$sources-scala-tool.xml
+[debug] 	resolve done (35ms resolve - 5959ms download)
