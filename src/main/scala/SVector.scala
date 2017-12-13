@@ -58,7 +58,7 @@ object SVector {
     SVector(Array.fill[Double](size)(1.0))
   }
 
-  def random(size: Int): SVector = { // TODO negative or zero dimention exception
+  def random(size: Int): SVector = { // TODO negative or zero dimention exceptions
     SVector(Array.fill[Double](size)(Random.nextDouble))
   }
 
