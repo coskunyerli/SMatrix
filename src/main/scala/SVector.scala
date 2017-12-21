@@ -1,11 +1,14 @@
 import scala.util.Random
 
-case class SVector private(private val array: Array[Double]) {
+class SVector private(private val array: Array[Double]) {
 
-  def +(vec: SVector): SVector = {
-    val arr = (for (i <- vec.array.indices) yield {
-      array(i) + vec.array(i)
-    }).toArray
+  def + (vec: SVector): SVector = {
+    val arr: Array[Double] = new Array[Double](this.array.length)
+    var i = 0
+    while (i < arr.length) {
+      arr(i) = this.array(i) + vec.array(i)
+      i += 1
+    }
     SVector(arr)
   }
 
@@ -70,4 +73,6 @@ object SVector {
   def unitRandom(size: Int): SVector = {
     random(size).normalize
   }
+
+  def apply(array: Array[Double]): SVector = new SVector(array)
 }
