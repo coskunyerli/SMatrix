@@ -61,17 +61,12 @@ object SVector {
     SVector(Array.fill[Double](size)(1.0))
   }
 
-  def random(size: Int): SVector = { // TODO negative or zero dimention exceptions
+  def random(size: Int): SVector = {
     SVector(Array.fill[Double](size)(Random.nextDouble))
   }
 
-  def random: SVector = {
-    val size: Int = Random.nextInt(10)
-    random(size)
-  }
-
   def unitRandom(size: Int): SVector = {
-    random(size).normalize
+    SVector.random(size).normalize
   }
 
   def apply(array: Array[Double]): SVector = new SVector(array)
