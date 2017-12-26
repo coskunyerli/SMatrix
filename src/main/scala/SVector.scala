@@ -1,15 +1,27 @@
 import scala.util.Random
 
-class SVector private(private val array: Array[Double]) {
+case class SVector(private val array: Array[Double]) {
+
+  def apply(i: Int): Double = this.array(i)
 
   def +(vec: SVector): SVector = {
-    val arr: Array[Double] = new Array[Double](this.array.length)
+    val array = new Array[Double](this.array.length)
     var i = 0
-    while (i < arr.length) {
-      arr(i) = this.array(i) + vec.array(i)
+    while (i < this.array.length) {
+      array(i) = this.array(i) + vec.array(i)
       i += 1
     }
-    SVector(arr)
+    SVector(array)
+  }
+
+  def -(vec: SVector): SVector = {
+    val array = new Array[Double](this.array.length)
+    var i = 0
+    while (i < this.array.length) {
+      array(i) = this.array(i) - vec.array(i)
+      i += 1
+    }
+    SVector(array)
   }
 
   def dot(vec: SVector): Double = this.array.indices.foldLeft(0.0)((sum, i) => sum + vec.array(i) * this.array(i))
@@ -18,11 +30,13 @@ class SVector private(private val array: Array[Double]) {
 
   def angle(vec: SVector): Double = Math.acos(this.cos(vec))
 
-  def cross(vec: SVector): SVector = ???
+  def cross(vec: SVector): SVector = SMatrix.crossMatrix(vec) * this
 
   def dim: Int = this.array.length
 
   def *(s: Double): SVector = SVector(this.array.map(_ * s))
+
+  def *(mat: SMatrix): SVector = mat * this
 
   def /(s: Double): SVector = this * (1.0 / s)
 
@@ -34,13 +48,19 @@ class SVector private(private val array: Array[Double]) {
 
   def normalize: SVector = this.unit
 
+  def map(f: (Double) => Double): SVector = SVector(this.array.map(f))
+
+  def foreach(f: (Double) => Unit): Unit = this.array.foreach(f)
+
+  def foldLeft = ???
+
+  def isPerpendicular(vec: SVector): Boolean = (this dot vec) <= 0.0
+
   override def toString: String = new StringBuilder("[ ").append(this.array.mkString(", ")).append(" ]").toString()
 
 }
 
 object SVector {
-
-  def apply(array: Array[Double]): SVector = new SVector(array)
 
   // TODO negative or zero dimention exception
   def zeros(size: Int): SVector = SVector(Array.fill[Double](size)(0.0))
@@ -48,11 +68,9 @@ object SVector {
   // TODO negative or zero dimention exception
   def ones(size: Int): SVector = SVector(Array.fill[Double](size)(1.0))
 
-  // TODO negative or zero dimention exceptions
   def random(size: Int): SVector = SVector(Array.fill[Double](size)(Random.nextDouble))
 
-  def random: SVector = this.random(Random.nextInt(10))
+  def unitRandom(size: Int): SVector = SVector.random(size).normalize
 
-  def unitRandom(size: Int): SVector = this.random(size).normalize
-
+  def apply(array: Array[Double]): SVector = new SVector(array)
 }
