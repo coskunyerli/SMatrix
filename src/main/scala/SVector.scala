@@ -42,7 +42,7 @@ case class SVector(private val array: Array[Double]) {
     SVector(this.array.map(_ * s))
   }
 
-  def *(mat: SMatrix): SVector = ???
+  def *(mat: SMatrix): SVector = mat * this
 
   def /(s: Double): SVector = {
     this * (1.0 / s)
@@ -60,11 +60,13 @@ case class SVector(private val array: Array[Double]) {
 
   def normalize: SVector = this.unit
 
-  def map(f: (Double) => SVector): SVector = ???
+  def map(f: (Double) => Double): SVector = SVector(this.array.map(f))
 
-  def foreach(f: (Double) => Unit): Unit = ???
+  def foreach(f: (Double) => Unit): Unit = this.array.foreach(f)
 
   def foldLeft = ???
+
+  def isPerpendicular(vec: SVector): Boolean = (this dot vec) <= 0.0
 
 
   override def toString: String = {

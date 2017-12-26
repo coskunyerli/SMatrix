@@ -5,15 +5,19 @@ case class SMatrix(array: Array[SVector]) {
 
   def *(mat: SMatrix): SMatrix = ???
 
+  def :*(mat: SMatrix): SMatrix = ???
+
   def +(mat: SMatrix): SMatrix = ???
+
+  def :+(mat: SMatrix): SMatrix = ???
 
   def -(mat: SMatrix): SMatrix = ???
 
-  def inv() = ???
+  def inv = ???
 
-  def det() = ???
+  def det = ???
 
-  def trans() = ???
+  def transpose = ???
 
 }
 
@@ -33,6 +37,10 @@ object SMatrix {
   def ones(x: Int, y: Int): SMatrix = ones(Size(x, y))
 
   def identity(s: Int): SMatrix = ???
+
+  def T(vec: SVector): SMatrix = ???
+
+  def R(eul: SVector): SMatrix = ???
 
 
 }
