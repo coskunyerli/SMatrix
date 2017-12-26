@@ -22,13 +22,15 @@ class SVector private(private val array: Array[Double]) {
 
   def angle(vec: SVector): Double = Math.acos(this.cos(vec))
 
-  def cross(vec: SVector): SVector = ???
+  def cross(vec: SVector): SVector = SMatrix.crossMatrix(vec) * this
 
   def dim: Int = this.array.length
 
   def *(s: Double): SVector = {
     SVector(this.array.map(_ * s))
   }
+
+  def *(mat: SMatrix): SVector = mat * this
 
   def /(s: Double): SVector = {
     this * (1.0 / s)
@@ -45,6 +47,14 @@ class SVector private(private val array: Array[Double]) {
   }
 
   def normalize: SVector = this.unit
+
+  def map(f: (Double) => Double): SVector = SVector(this.array.map(f))
+
+  def foreach(f: (Double) => Unit): Unit = this.array.foreach(f)
+
+  def foldLeft = ???
+
+  def isPerpendicular(vec: SVector): Boolean = (this dot vec) <= 0.0
 
 
   override def toString: String = {
