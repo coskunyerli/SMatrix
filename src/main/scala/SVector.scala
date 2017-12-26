@@ -21,7 +21,7 @@ case class SVector(private val array: Array[Double]) {
       array(i) = this.array(i) - vec.array(i)
       i += 1
     }
-    SVector(array)
+    SVector(array)//ffff
   }
 
   def dot(vec: SVector): Double = {
