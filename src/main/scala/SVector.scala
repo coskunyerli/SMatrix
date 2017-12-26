@@ -1,15 +1,27 @@
 import scala.util.Random
 
-class SVector private(private val array: Array[Double]) {
+case class SVector(private val array: Array[Double]) {
 
-  def + (vec: SVector): SVector = {
-    val arr: Array[Double] = new Array[Double](this.array.length)
+  def apply(i: Int): Double = this.array(i)
+
+  def +(vec: SVector): SVector = {
+    val array = new Array[Double](this.array.length)
     var i = 0
-    while (i < arr.length) {
-      arr(i) = this.array(i) + vec.array(i)
+    while (i < this.array.length) {
+      array(i) = this.array(i) + vec.array(i)
       i += 1
     }
-    SVector(arr)
+    SVector(array)
+  }
+
+  def -(vec: SVector): SVector = {
+    val array = new Array[Double](this.array.length)
+    var i = 0
+    while (i < this.array.length) {
+      array(i) = this.array(i) - vec.array(i)
+      i += 1
+    }
+    SVector(array)
   }
 
   def dot(vec: SVector): Double = this.array.indices.foldLeft(0.0)((sum, i) => sum + vec.array(i) * this.array(i))
