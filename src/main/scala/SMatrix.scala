@@ -68,6 +68,8 @@ class SMatrix(val vecs: Array[SVector]) {
     SMatrix(vArray)
   }
 
+  def T: SMatrix = this.transpose
+
   def size: Size = Size(this.rows, this.cols)
 
   def cols: Int = this.vecs.length
@@ -126,7 +128,6 @@ class SMatrix(val vecs: Array[SVector]) {
 object SMatrix {
   def apply(vecs: Array[SVector]): SMatrix = new SMatrix(vecs)
 
-  def crossMatrix(vec: SVector): SMatrix = ???
 
   def random(s: Size): SMatrix = random(s.x, s.y)
 
@@ -169,6 +170,10 @@ object SMatrix {
   }
 
   def create(data: Double*): SMatrix = SMatrix(Array(SVector(data.toArray)))
+
+  def <<(row: Int, col: Int)(num: Double*): SMatrix = {
+    SMatrix.create(num: _*).resize(row, col)
+  }
 
   // def T(vec: SVector): SMatrix = ???
 

@@ -1,5 +1,6 @@
 import scala.util.Random
 
+// Todo vector3d and vector2d should be implemented
 class SVector(private val array: Array[Double]) {
 
   def apply(i: Int): Double = this.array(i)
@@ -30,7 +31,8 @@ class SVector(private val array: Array[Double]) {
 
   def angle(vec: SVector): Double = Math.acos(this.cos(vec))
 
-  def cross(vec: SVector): SVector = SMatrix.crossMatrix(vec) * this
+  //TODO this method is just 3 dimentsion vectors so we can do Vector3D and vector2D classes
+  //def cross(vec: SVector): SVector = SMatrix.crossMatrix(vec) * this
 
   def dim: Int = this.array.length
 
@@ -76,7 +78,7 @@ class SVector(private val array: Array[Double]) {
 
   def isPerpendicular(vec: SVector): Boolean = (this dot vec) <= 0.0
 
-  def toMatrix(h: Boolean = false): SMatrix = {
+  def toMatrix(h: Boolean = false): SMatrix[this.type] = {
     if (h) {
       SMatrix(this.array.map(num => SVector(Array(num))))
     } else {

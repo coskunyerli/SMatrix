@@ -1,3 +1,1 @@
-case class Size(x: Int, y: Int) {
-
-}
+case class Size(x: Int, y: Int)
